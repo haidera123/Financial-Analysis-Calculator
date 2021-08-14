@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: "Roboto", sans-serif;
+}
+/* Custom Code */
+.cover__wrapper--calc {
+  padding: 10px;
+  width: 100%;
+  margin: 20px auto;
+}
+.wrapper__calc {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.container__calc {
+  padding: 10px;
+}
+.rightmost {
+  width: 60%;
+}
+.leftmost {
+  width: 40%;
+}
+.box__calc {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.borderradiusheader {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.header__calc {
+  background-color: #333333;
+}
+.heading__secondary--calc {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.borderbottom {
+  border-bottom: 1px solid #ddd;
+}
+.financialSummary {
+  border-radius: 50px;
+  background-color: #333333;
+  color: #fff;
+  padding: 30px;
+  margin-top: 20px;
+}
+.btn__calc {
+  background-color: #27ae60;
+  color: #fff;
+  border: 0px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+.financialAnalysisBtn {
+  width: 100%;
+  border: 0;
+  background-color: #333333;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.main__heading--calc {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.col--calc ul {
+  padding: 20px;
+}
+.col--calc ul li {
+  padding: 5px;
+}
+.info__box {
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo__box {
+  width: 200px;
+  padding: 20px;
+  height: 200px;
+}
+.imglogo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* Slider Input style */
+.row__calc {
+  padding: 8px;
+}
+.row__btn--calc {
+  padding: 10px;
+}
+.combined__calc,
+.combined__calc--unique {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.label__calc {
+  width: 60%;
+  font-size: 16px;
+}
+.input__box--calc-slider {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: 0px;
+  font-size: 18px;
+}
+.input__box--calc-slider:focus {
+  outline: 0;
+}
+.input__box--calc-slider:disabled {
+  background-color: #ddd;
+  color: #000;
+  font-size: 18px;
+  cursor: not-allowed;
+}
+.outputRow {
+  background-color: #3333333a;
+  margin-bottom: 10px;
+}
+.combined__unit--calc {
+  display: flex;
+}
+.unit__calc {
+  border: 1px solid #ddd;
+  width: fit-content;
+  padding: 8px 20px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 0px;
+  background-color: #ddd;
+}
+.input__sliderValue {
+  font-size: 24px;
+  font-weight: 700;
+}
+.slider__container {
+  padding: 4px;
+}
+.input_calc {
+  width: 100%;
+}
+.minmax {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.min__calc {
+  font-size: 14px;
+  color: rgb(119, 119, 119);
+}
+.max__calc {
+  font-size: 14px;
+  color: rgb(119, 119, 119);
+}
+/* COTS */
+/* Slider */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 3px solid #333333;
+}
+.slider::-webkit-slider-thumb:active {
+  box-shadow: 0 0 0 10px #3333336b;
+}
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333333;
+  cursor: pointer;
+}
+/* Table Code */
+.table__responsive--calc {
+  margin-bottom: 20px;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+.theading__calc {
+  background-color: #333333;
+  color: #fff;
+  padding: 12px;
+}
+table th,
+table td {
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 7px 10px;
+}
+
+table th {
+  padding: 7px 10px;
+  text-transform: uppercase;
+  background-color: rgb(235, 235, 235);
+  width: fit-content;
+}
+.bggreen {
+  background-color: #27ae5f63;
+}
+.bggray {
+  background-color: rgba(221, 221, 221, 0.465);
+}
+.bold_calc td,
+.bold_calc th {
+  font-weight: bold;
+}
+@media screen and (max-width: 1150px) {
+  .combined__calc {
+    flex-direction: column;
+  }
+  .combined__unit--calc {
+    width: 100%;
+  }
+  .input__box--calc-slider {
+    width: 100%;
+  }
+  .label__calc {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 850px) {
+  table td {
+    font-size: 14px;
+  }
+  table th {
+    font-size: 16px;
+  }
+  .wrapper__calc {
+    flex-direction: column;
+  }
+  .rightmost {
+    width: 100%;
+  }
+  .leftmost {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 710px) {
+  table td {
+    font-size: 12px;
+  }
+  table th {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nonresponsive {
+    display: none;
+  }
+  .logo__box {
+    display: none;
+  }
+  .financialSummary {
+    border-radius: 0px;
+  }
+  .btn__calc {
+    white-space: break-spaces;
+  }
+  table {
+    border: 0;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
