@@ -51,11 +51,13 @@ body {
   border-bottom: 1px solid #ddd;
 }
 .financialSummary {
-  border-radius: 50px;
+  /* border-radius: 50px; */
   background-color: #333333;
   color: #fff;
   padding: 30px;
   margin-top: 20px;
+  margin-bottom: 10px;
+  display: none;
 }
 .btn__calc {
   background-color: #27ae60;
@@ -69,6 +71,13 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   margin: 20px 0px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+.btn__calc:hover {
+  background-color: #fff !important;
+  border: 1px solid #333;
+  color: #000;
 }
 .financialAnalysisBtn {
   width: 100%;
@@ -98,6 +107,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#success-alert {
+  background-color: #333 !important;
+  color: #fff;
 }
 .logo__box {
   width: 200px;
@@ -222,6 +235,7 @@ body {
 /* Table Code */
 .table__responsive--calc {
   margin-bottom: 20px;
+  display: none;
 }
 table {
   border: 1px solid #ccc;
@@ -265,6 +279,54 @@ table th {
 .bold_calc th {
   font-weight: bold;
 }
+
+/* CheckBox Styling */
+input[type="checkbox"] + label {
+  display: block !important;
+  margin: 0.2em !important;
+  cursor: pointer !important;
+  padding: 0.2em !important;
+}
+
+input[type="checkbox"] {
+  display: none !important;
+}
+
+input[type="checkbox"] + label:before {
+  content: "\2714" !important;
+  border: 0.1em solid #000 !important;
+  border-radius: 0.2em !important;
+  display: inline-block !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+  padding-left: 0.2em !important;
+  padding-bottom: 0.3em !important;
+  margin-right: 0.2em !important;
+  vertical-align: bottom !important;
+  color: transparent !important;
+  transition: 0.2s !important;
+}
+
+input[type="checkbox"] + label:active:before {
+  transform: scale(0) !important;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #333 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+}
+
+input[type="checkbox"]:disabled + label:before {
+  transform: scale(1);
+  border-color: #333 !important;
+}
+
+input[type="checkbox"]:checked:disabled + label:before {
+  transform: scale(1) !important;
+  background-color: #333 !important;
+  border-color: #333 !important;
+}
 @media screen and (max-width: 1150px) {
   .combined__calc {
     flex-direction: column;
@@ -280,7 +342,7 @@ table th {
     margin-bottom: 10px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
   table td {
     font-size: 14px;
   }
@@ -306,6 +368,12 @@ table th {
   }
 }
 @media screen and (max-width: 600px) {
+  .combined__calc--unique {
+    flex-direction: column;
+  }
+  .result__output--calc {
+    width: 100%;
+  }
   .nonresponsive {
     display: none;
   }
@@ -343,7 +411,7 @@ table th {
     border-bottom: 1px solid #ddd;
     display: block;
     font-size: 0.8em;
-    text-align: right;
+    text-align: right !important;
   }
 
   table td::before {
