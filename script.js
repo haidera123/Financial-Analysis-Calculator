@@ -732,7 +732,7 @@ function downloadPDF() {
     styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
   });
 
-  window.open(doc.output("bloburl"));
+  window.open(URL.createObjectURL(doc.output("blob")));
 }
 
 function createTableForOutputValuesInEmailAndPDF() {
