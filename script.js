@@ -678,7 +678,7 @@ function downloadPDF() {
   doc.autoTable({
     startY: 75,
     html: "#table5",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
     columnStyles: {
       1: { halign: "right" },
     },
@@ -686,7 +686,7 @@ function downloadPDF() {
   doc.autoTable({
     startY: 95,
     html: "#table6",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
     columnStyles: {
       1: { halign: "right" },
     },
@@ -694,7 +694,7 @@ function downloadPDF() {
   doc.autoTable({
     startY: 130,
     html: "#table7",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
     columnStyles: {
       1: { halign: "right" },
     },
@@ -702,7 +702,7 @@ function downloadPDF() {
   doc.autoTable({
     startY: 155,
     html: "#table8",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
     columnStyles: {
       1: { halign: "right" },
     },
@@ -713,23 +713,23 @@ function downloadPDF() {
   doc.autoTable({
     startY: 20,
     html: "#table1",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
   });
 
   doc.autoTable({
     startY: 180,
     html: "#table2",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
   });
   doc.autoTable({
     startY: 220,
     html: "#table3",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
   });
   doc.autoTable({
     startY: 265,
     html: "#table4",
-    styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
+    styles: { overflow: "linebreak", fontSize: 6 },
   });
 
   doc.save("stenneth capital financial analysis.pdf");
