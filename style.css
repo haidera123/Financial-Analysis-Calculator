@@ -327,6 +327,7 @@ input[type="checkbox"]:checked:disabled + label:before {
   background-color: #333 !important;
   border-color: #333 !important;
 }
+
 @media screen and (max-width: 1150px) {
   .combined__calc {
     flex-direction: column;
@@ -350,8 +351,9 @@ input[type="checkbox"]:checked:disabled + label:before {
     font-size: 16px;
   }
   .wrapper__calc {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
+
   .rightmost {
     width: 100%;
   }
