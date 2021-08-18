@@ -732,8 +732,8 @@ function downloadPDF() {
     styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
   });
 
-  window.open(URL.createObjectURL(doc.output("blob")));
-//   doc.save("stenneth capital financial analysis.pdf");
+  // window.open(URL.createObjectURL(doc.output("blob")));
+  doc.save("stenneth capital financial analysis.pdf");
 }
 
 function createTableForOutputValuesInEmailAndPDF() {
@@ -1113,3 +1113,25 @@ function IRR(values, guess) {
   // Return internal rate of return
   return resultRate;
 }
+function checkBrowser() {
+  let browser = "";
+  let c = navigator.userAgent.search("Chrome");
+  let f = navigator.userAgent.search("Firefox");
+  let m8 = navigator.userAgent.search("MSIE 8.0");
+  let m9 = navigator.userAgent.search("MSIE 9.0");
+  if (c > -1) {
+    browser = "Chrome";
+  } else if (f > -1) {
+    browser = "Firefox";
+  } else if (m9 > -1) {
+    browser = "MSIE 9.0";
+  } else if (m8 > -1) {
+    browser = "MSIE 8.0";
+  }
+  return browser;
+}
+(() => {
+  if (!(checkBrowser() == "Firefox")) {
+    document.getElementById("option2").disabled = true;
+  }
+})();
