@@ -736,7 +736,7 @@ function downloadPDF() {
   return doc.output("datauristring");
 }
 function downloadPDFWithObject() {
-  PDFObject.embed(downloadPDF(), document.body);
+  PDFObject.embed(downloadPDF(), "#example1");
 }
 function createTableForOutputValuesInEmailAndPDF() {
   let html = `
