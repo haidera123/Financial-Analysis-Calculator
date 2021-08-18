@@ -733,10 +733,11 @@ function downloadPDF() {
   });
 
   // window.open(URL.createObjectURL(doc.output("blob")));
-        doc.autoPrint() 
-
+  return doc.output("datauristring");
 }
-
+function downloadPDFWithObject() {
+  PDFObject.embed(downloadPDF(), document.body);
+}
 function createTableForOutputValuesInEmailAndPDF() {
   let html = `
   
@@ -932,7 +933,7 @@ function checkOptions(ele) {
     : document.querySelectorAll(".table__responsive--calc").forEach((el) => {
         el.style.display = "none";
       });
-  document.getElementById("option2").checked ? downloadPDF() : "";
+  document.getElementById("option2").checked ? downloadPDFWithObject() : "";
   if (document.getElementById("option3").checked) {
     if (!(document.getElementById("uname").value && document.getElementById("uemail").value)) {
       alert("Please provide email or user name");
