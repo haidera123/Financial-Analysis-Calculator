@@ -733,11 +733,9 @@ function downloadPDF() {
   });
 
   // window.open(URL.createObjectURL(doc.output("blob")));
-  return doc.output("datauristring");
+  doc.save("stenneth capital financial analysis.pdf");
 }
-function downloadPDFWithObject() {
-  PDFObject.embed(downloadPDF(), "#example1");
-}
+
 function createTableForOutputValuesInEmailAndPDF() {
   let html = `
   
@@ -933,7 +931,7 @@ function checkOptions(ele) {
     : document.querySelectorAll(".table__responsive--calc").forEach((el) => {
         el.style.display = "none";
       });
-  document.getElementById("option2").checked ? downloadPDFWithObject() : "";
+  document.getElementById("option2").checked ? downloadPDF() : "";
   if (document.getElementById("option3").checked) {
     if (!(document.getElementById("uname").value && document.getElementById("uemail").value)) {
       alert("Please provide email or user name");
