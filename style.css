@@ -258,7 +258,7 @@ table tr {
 table th,
 table td {
   text-align: left;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
   padding: 7px 10px;
 }
@@ -344,7 +344,7 @@ input[type="checkbox"]:checked:disabled + label:before {
 }
 @media screen and (max-width: 950px) {
   table td {
-    font-size: 14px;
+    font-size: 12px;
   }
   table th {
     font-size: 16px;
@@ -361,7 +361,7 @@ input[type="checkbox"]:checked:disabled + label:before {
 }
 @media screen and (max-width: 710px) {
   table td {
-    font-size: 12px;
+    font-size: 10px;
   }
   table th {
     font-size: 13px;
