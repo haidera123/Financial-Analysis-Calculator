@@ -732,8 +732,8 @@ function downloadPDF() {
     styles: { overflow: "linebreak", columnWidth: "wrap", fontSize: 6 },
   });
 
-  // window.open(URL.createObjectURL(doc.output("blob")));
-  doc.save("stenneth capital financial analysis.pdf");
+  window.open(URL.createObjectURL(doc.output("blob")));
+//   doc.save("stenneth capital financial analysis.pdf");
 }
 
 function createTableForOutputValuesInEmailAndPDF() {
