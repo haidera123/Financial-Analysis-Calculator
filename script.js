@@ -389,7 +389,6 @@ function updateUI(
       )
     );
 
-  document.getElementById("calculateBox").style.display = "block";
   document.getElementById("financialSummaryBox").style.display = "block";
 }
 function updateTable(
@@ -1130,8 +1129,125 @@ function checkBrowser() {
   }
   return browser;
 }
+let isResize = false;
+
 (() => {
   if (!(checkBrowser() == "Firefox")) {
     document.getElementById("option2").disabled = true;
   }
+  myFunction();
 })();
+function myFunction() {
+  var w = window.outerWidth;
+  if (w * 1 > 950 && isResize) {
+    document.getElementById("calculateBox").innerHTML = `
+    <header class="header__calc">
+    <h2 class="heading__secondary--calc">GET YOUR RESULT</h2>
+  </header>
+  <!-- ----- -->
+  <div class="row__calc">
+    <input type="hidden" name="contact_number" /><input
+      type="hidden"
+      name="message"
+      id="message"
+    />
+    <div class="combined__calc">
+      <div class="label__calc">Name</div>
+      <div class="combined__unit--calc">
+        <span class="unit__calc"><i class="fas fa-user"></i></span>
+        <input type="text" class="input__box--calc-slider" name="uname" id="uname" />
+      </div>
+    </div>
+  </div>
+  <div class="row__calc">
+    <div class="combined__calc">
+      <div class="label__calc">Email</div>
+      <div class="combined__unit--calc">
+        <span class="unit__calc">@</span>
+        <input type="email" class="input__box--calc-slider" name="uemail" id="uemail" />
+      </div>
+    </div>
+  </div>
+  <div class="row__calc" style="border-top: 1px solid #ddd">
+    <form>
+      <input type="checkbox" id="option1" name="option1" value="option1" checked />
+      <label for="option1">(1) Print report on screen.</label>
+      <input type="checkbox" id="option2" name="option2" value="option2" />
+      <label for="option2">(2) Download report as PDF(Only work in firefox).</label>
+      <input type="checkbox" id="option3" name="option3" value="option3" />
+      <label for="option3">(3) Email report to your email address.</label>
+    </form>
+    <p style="color: #333; padding: 10px; font-weight: bold">
+      *Email and Name are only required for getting report in your email address.
+    </p>
+  </div>
+  <div class="row__btn--calc">
+    <input
+      type="submit"
+      value="Get your financial analysis"
+      class="btn__calc"
+      id="btn__calc"
+      style="background-color: #333333"
+    />
+  </div>
+  `;
+    document.getElementById("dynamic__box--calc--result").innerHTML = "";
+  } else if (w * 1 < 950) {
+    isResize = true;
+    document.getElementById("dynamic__box--calc--result").innerHTML = `
+      <header class="header__calc">
+      <h2 class="heading__secondary--calc">GET YOUR RESULT</h2>
+    </header>
+    <!-- ----- -->
+    <div class="row__calc">
+      <input type="hidden" name="contact_number" /><input
+        type="hidden"
+        name="message"
+        id="message"
+      />
+      <div class="combined__calc">
+        <div class="label__calc">Name</div>
+        <div class="combined__unit--calc">
+          <span class="unit__calc"><i class="fas fa-user"></i></span>
+          <input type="text" class="input__box--calc-slider" name="uname" id="uname" />
+        </div>
+      </div>
+    </div>
+    <div class="row__calc">
+      <div class="combined__calc">
+        <div class="label__calc">Email</div>
+        <div class="combined__unit--calc">
+          <span class="unit__calc">@</span>
+          <input type="email" class="input__box--calc-slider" name="uemail" id="uemail" />
+        </div>
+      </div>
+    </div>
+    <div class="row__calc" style="border-top: 1px solid #ddd">
+      <form>
+        <input type="checkbox" id="option1" name="option1" value="option1" checked />
+        <label for="option1">(1) Print report on screen.</label>
+        <input type="checkbox" id="option2" name="option2" value="option2" />
+        <label for="option2">(2) Download report as PDF(Only work in firefox).</label>
+        <input type="checkbox" id="option3" name="option3" value="option3" />
+        <label for="option3">(3) Email report to your email address.</label>
+      </form>
+      <p style="color: #333; padding: 10px; font-weight: bold">
+        *Email and Name are only required for getting report in your email address.
+      </p>
+    </div>
+    <div class="row__btn--calc">
+      <input
+        type="submit"
+        value="Get your financial analysis"
+        class="btn__calc"
+        id="btn__calc"
+        style="background-color: #333333"
+      />
+    </div>
+    `;
+    document.getElementById("calculateBox").innerHTML = "";
+  }
+  if (!(checkBrowser() == "Firefox")) {
+    document.getElementById("option2").disabled = true;
+  }
+}
