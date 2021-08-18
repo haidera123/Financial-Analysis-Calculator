@@ -187,6 +187,8 @@ function updateFinancialAnalysisTable(
   for (let x = 0; x < yearNo; x++) {
     depreciation[x] = (propertyValueest * f41) / 27.5;
   }
+  depreciation[27] = ((propertyValueest * f41) / 27.5) * 0.5;
+  depreciation[28] = 0;
   depreciation[29] = 0;
   let mortgageInterest = new Array(8);
   let interestRate = (document.getElementById("interestRate").value.replace(/,/g, "") * 1) / 100;
