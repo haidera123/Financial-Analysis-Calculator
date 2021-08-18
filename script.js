@@ -1175,7 +1175,7 @@ function myFunction() {
       <input type="checkbox" id="option2" name="option2" value="option2" />
       <label for="option2">(2) Download report as PDF(Only work in firefox).</label>
       <input type="checkbox" id="option3" name="option3" value="option3" />
-      <label for="option3">(3) Email report to your email address.</label>
+      <label for="option3">(3) Email report to your email address(Does not support outlook).</label>
     </form>
     <p style="color: #333; padding: 10px; font-weight: bold">
       *Email and Name are only required for getting report in your email address.
@@ -1229,7 +1229,7 @@ function myFunction() {
         <input type="checkbox" id="option2" name="option2" value="option2" />
         <label for="option2">(2) Download report as PDF(Only work in firefox).</label>
         <input type="checkbox" id="option3" name="option3" value="option3" />
-        <label for="option3">(3) Email report to your email address.</label>
+        <label for="option3">(3) Email report to your email address(Does not support outlook).</label>
       </form>
       <p style="color: #333; padding: 10px; font-weight: bold">
         *Email and Name are only required for getting report in your email address.
