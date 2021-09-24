@@ -108,6 +108,7 @@ function updateFinancialAnalysisTable(
   let f42 = (document.getElementById("applicationRate").value.replace(/,/g, "") * 1) / 100;
   let f43 = (document.getElementById("closingCostBuy").value.replace(/,/g, "") * 1) / 100;
   let f44 = (document.getElementById("closingCostSell").value.replace(/,/g, "") * 1) / 100;
+  let f45 = (document.getElementById("insuranceIncrease").value.replace(/,/g, "") * 1) / 100;
   let year = [
     12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240, 252,
     264, 276, 288, 300, 312, 324, 336, 348, 360,
@@ -143,8 +144,9 @@ function updateFinancialAnalysisTable(
   for (let x = 1; x < yearNo; x++) {
     propertyTaxes[x] = propertyTaxes[0] * Math.pow(1 + f38, (year[x] - 12) / 12);
   }
-  for (let x = 0; x < yearNo; x++) {
-    insurance[x] = 12 * f16;
+  insurance[0] = 12 * f16;
+  for (let x = 1; x < yearNo; x++) {
+    insurance[x] = insurance[0] * Math.pow(1 + f45, (year[x] - 12) / 12);
   }
   utilities[0] = 12 * f17;
   for (let x = 1; x < yearNo; x++) {
@@ -793,8 +795,6 @@ function createTableForOutputValuesInEmailAndPDF() {
     </tr>
   </tbody>
 </table>
-
-
 <table id="table7">
   <thead>
     <tr style="padding: 10px">
@@ -894,7 +894,6 @@ function generateEmailMessage() {
       ${document.getElementById("table3").innerHTML}
       &nbsp;&nbsp;
       ${document.getElementById("table4").innerHTML}
-
       </body>
     </html>`;
   return html;
@@ -992,7 +991,6 @@ function emailAlert() {
 //   return url;
 // }
 /*
-
 console.log(
     "grossScheduleIncome" + grossScheduleIncome,
     "lessVacancyAllowance" + lessVacancyAllowance,
@@ -1254,3 +1252,4 @@ function myFunction() {
     document.getElementById("option2").disabled = true;
   }
 }
+ERu6SejdDEXK6rkzVXOmZ+8ttbootU8miNER1IScZV7fZ18GY/9MhMmzxlXttnXwZj/wBMhMr2b302358ZSfL2v3PLhAA0bPAAAAAAAAABILAuLm7GOpfLE/U2lfqwLi5uxjqXyxP1Npl85NQnbDSZu6/GyUs46GWI6GUkVkABiO6rT4eHZ/xnxDDf0qWWR3VafDw7P+M+IYb+lTWZsa9/rPGGUzj1Pzj1R2AVdLQAAAAAAAAfU03pfNtX5rayvJMtxOa5jd9phsLbmquY3xG+d3NTEb+eZmIjuzCYOxngA1V9QzPaHjN1M7qoybA1f8rl2Of4Yp3d7fLzcXlHDYGnlXavL7z5PQwmAv4ydFqnT/P2hFHQGzPU207NYy7TWU38zvxMRcrojdbs7+7crnmpiI590zvmOiJTZ2N8AfIdOdQzLXOIp1BmFMU1f4dZ304O3Peq3893x8rdE95JrSmkcn0XlNrLMjy3DZXgLUbqLGFtRRTH8O74+l9rf0p3j84sRidNFj9FP5nz+3k3+T83rOH0V3/1VdX2h+TLsswuU4S3hcHYtYbD2qYpt2bNEU00x3IiI5oh+vd+DJ091nohkvjM6ZnTLV00xTHJpjRCpvhQdn3XHlCr6NLVzaHCh7P2uPKE/RpavXXAara8McIRLGazc2zxkAd50gAAAAAH6sqzLF5NmFjH5fir2BxtiqK7WJw9c0V0TE74mJjnjnhMrYPw9KrE2Ml2kU8qiZi3bz7DW/a8/wD76iO5/vU8/NzxMzvQrHl43JuHx9E03o+P2mOmHpYHKF/AV8q1Pw+8T0SunyjN8FnuXWMfluKtY3B36YrtX7FUVUVx34mH7Y6O+qS2ObfdW7FMx6pkeM6vltyrfiMqxUzVh7vjiOmmebpp3T8KwnYdwn9IbabFGGwuIjK9Q8nfdyjGVxFzm6Ztz0Vx8HPzTvjdG9MMo5ExGAnlfuo649VLydlmxjo5M/pr6p9G5hhln2gAAAAAAAAce+q44aHbKax/c/Q7K0fvquOGh2ymsf3P0Oy12a+u1eGeMMjnPqlPijhLSc9MsMz0ywqqYAACUHF39mzN/IF/0jDIvpQcXf2bM38gX/SMM8TLX0+89jJGu29qxWOhliOhlF1lHGXJxkECeMb/ACz0d8QvfWIgpfcY3+WejviF76xEFZMg/T7fnxR/Lev3PLhAA9/7vCHddiXZm0D5fwHpNDpTuuxLszaB8v4D0mh08bq9zZPB28L8+jbHFcBT7WGWKfawyhC4x0AA5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaQ4ana1av/c/TLKrhaPw1O1q1f+5+mWVXCnZq6nX4vSEyzn1qnwxxkAbVjwBwQtg4LfYB0P8AEKf6y2rLVXBb7AOh/iFP9ZbVlCMZrVzxTxlcsHq1vZDIDqO2+fnX4kzD/QufRlSyumzr8SZh/oXPoypZUPNPovbY9WAzq6bXn6ACgMCAAO4bONkWrNq2ZTgtM5Tdxs0zEXMTX+Bh7Md+5cnmj4I3z3ol09Y5xflEfePxMxHP/i9+N/8A95aeLlbH1ZOw03qI0zpiI09D2MlYGnH4iLVc6I0afg/DsZ4CumdIdQzLWFdOp82p3Vxha6eTg7U97kT/AN5Md+rm3xviISfwuFtYLD0WbFuizaoiKaaKIiIpjuRER0Q/vuifHuN2+JSLFY3EYyvl36tPCPJV8JgrGDp5NmmI/n7y5AOm7w4y5OMg5AAx3UZ+MD7B+H8r2Pq7qTHdRn4wPsH4fyvY+ruvUyVr1nxQ8rKepXdkq4gFvRcAAAAAAAAAAAAAAAAAAAAAAAAB3/ZZsL1jtfx0WdOZXcu4SKoi7mOI328Naju765j8Keb2tMTO/piOl8rl23Zomu7Vopj7y+lq1cvVRRbjTM/aHQG4NjfBc1ttguW7+Fwf+EZHVumc2zC3MW6qe/bo5puT8G6N3dTA2L8CPSWz2bGY6hmNU53b3VUziaN2FsVf+Xb59+7v1TM97ckhatW8Pbi3boiiimN1NNMboiPFDDY7OamnTRhI0z2p9IbTAZt1V6K8VOiOqP8ArS+xzgo6L2RdSxlrCf4xntMc+aY+mK66J54nqdO7k245+5G/vzLdcRujmZjnnpZ3dLA38RexVc13qpmf5bvD4a1hqP8AHap0QxTHfO4xu53U9oO1LTGy/Ka8x1Lm1jLbG6eRRcq33Lsx3KKI56p6OiObfz7nxopqrq5
